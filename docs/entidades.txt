@@ -1,0 +1,100 @@
+___________
+E-commerce
+___________
+
+ENTIDADES:
+Produtos
+Categorias
+Clientes
+Compras
+Carrinho (Lista de Produtos - Pedido)
+Forma Pagamento (Boleto, Cartão Crédito, Cartão Débito)
+Endereços
+Fornecedor
+Telefone_cliente
+Telefone_fornecedor
+Pais
+Uf
+Cidade
+Estoque
+
+RELACIONAMENTOS
+
+Produtos -> Categorias
+Carrinho -> Produtos
+Clientes -> Compras
+Clientes -> Endereco
+Fornecedor -> Produto
+Fornecedor -> Endereco
+Fornecedor -> Telefone
+Cliente -> Telefone Cliente
+Pais -> uf
+uf -> Cidade
+Produto -> Estoque
+
+ATRIBUTOS
+
+Clientes
+    Nome
+    Email
+    Senha
+
+Endereco
+    Nome Completo
+    Número
+    CEP
+    Endereco
+    Numero
+    Complemento
+    Bairro
+    
+Categoria
+    Nome
+
+Produto
+    Imagem
+    Nome
+    Modelo
+    Descricao
+    Condicao
+    Classificacao
+    Valor
+    *Disponibilidade
+
+Fornecedor
+    Rasao Social
+    Fantasia
+    CNPJ
+    *Endereco
+    *Telefone
+    
+Carrinho
+    Produto
+    Quantidade
+    Valor Total
+    Data
+    
+Telefone
+    Fone
+    Descricao
+
+Pais
+    Nome
+
+Uf
+    Nome
+
+Cidade
+    Nome
+
+Estoque
+    Entrada
+    Saida
+	DA
+
+    
+ 
+
+
+
+
