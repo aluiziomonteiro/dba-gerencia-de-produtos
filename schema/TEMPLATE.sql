@@ -1,7 +1,6 @@
 
 /*1 – Criar um banco de dados em MYSQL com o nome TEMPLATE*/
 CREATE DATABASE TEMPLATE;
-select 'eu vou me destravar';
 
 /*2 – Usar o comando para colocar o banco de dados TEMPLATE em uso.*/
 USE TEMPLATE;
@@ -113,11 +112,11 @@ UPDATE tabProdutos SET preco_venda_pro = '155.00' WHERE codigo_pro = 8;
 
 /*4) Crie a instrução SQL para somar mais 6 itens no
 Produto de código igual a 9. */
-UPDATE tabprodutos SET qtd_estoque_pro = (qtd_estoque_pro + 6) WHERE codigo_pro = 9;
+UPDATE tabProdutos SET qtd_estoque_pro = (qtd_estoque_pro + 6) WHERE codigo_pro = 8;
 
 /*5) Crie a instrução SQL para atualizar os dados abaixo do
 Produto de código igual a 11. */
-UPDATE tabprodutos SET descricao_pro = 'Maio de Natação Sublime Especial',
+UPDATE tabProdutos SET descricao_pro = 'Maio de Natação Sublime Especial',
     preco_custo_pro = '64.00',
     preco_venda_pro = '115.00',
     qtd_estoque_pro = 9,
@@ -125,39 +124,39 @@ UPDATE tabprodutos SET descricao_pro = 'Maio de Natação Sublime Especial',
     WHERE codigo_pro = 11;
 
 /*1) Crie a instrução SQL para excluir a Unidade de código igual a 4. */
-DELETE FROM tabunidades WHERE codigo_uni = 4;
+DELETE FROM tabUnidades WHERE codigo_uni = 4;
 
 /*2) Crie a instrução SQL para excluir o Produto de
 código igual a 7. */
-DELETE FROM tabprodutos WHERE codigo_pro = 7;
+DELETE FROM tabProdutos WHERE codigo_pro = 7;
 
 /*3) Selecionar todos os registros da tabela de Marcas. */
-SELECT * FROM tabmarcas;
+SELECT * FROM tabMarcas;
 
 /*4) Selecionar todos os registros da tabela de Categorias
 ordenando pela descrição. */
-SELECT * FROM tabcategorias ORDER  BY descricao_cat;
+SELECT * FROM tabCategorias ORDER  BY descricao_cat;
 
 /*5) Selecionar todos os registros da tabela de Unidades
 ordenando pelo código da unidade de forma descendente. */
-SELECT * FROM tabunidades ORDER BY codigo_uni DESC; 
+SELECT * FROM tabUnidades ORDER BY codigo_uni DESC; 
 
 /*6) Selecionar todas as descrições da tabela de
 Unidades ordenando pela descrição da unidade. */
-SELECT descricao_uni FROM tabunidades ORDER BY descricao_uni;
+SELECT descricao_uni FROM tabUnidades ORDER BY descricao_uni;
 
 /*7) Selecionar todos os produtos ordenados pela
 descrição do produto. */
-SELECT * FROM tabprodutos ORDER BY descricao_pro;
+SELECT * FROM tabProdutos ORDER BY descricao_pro;
 
 /*8) Apresentar a descrição e o preço de venda de todos
 os produtos ordenados pelo preço da venda. */
-SELECT descricao_pro,preco_venda_pro FROM tabprodutos ORDER BY preco_venda_pro;
+SELECT descricao_pro,preco_venda_pro FROM tabProdutos ORDER BY preco_venda_pro;
 
 /*9) Apresentar a descrição e os preços de custo e de
 venda dos produtos ordenados pelo preço de custo de
 forma descendente.*/
-SELECT descricao_pro,preco_custo_pro FROM tabprodutos ORDER BY preco_venda_pro DESC;
+SELECT descricao_pro,preco_custo_pro FROM tabProdutos ORDER BY preco_venda_pro DESC;
 
 /*10) Apresentar todos os dados dos produtos que não
 sejam códigos ordenando pela descrição do produto de
@@ -166,47 +165,48 @@ forma descendente. */
 /* SELECT * FROM tabprodutos WHERE codigo_pro NOT ORDER BY descricao_pro DESC; */
 
 /*11) Apresentar a quantidade de Unidades cadastradas. */
-SELECT COUNT(DISTINCT codigo_uni) FROM tabunidades;
+SELECT COUNT(DISTINCT codigo_uni) FROM tabUnidades;
 
 /*12) Apresentar o total de variedades de Produtos
 cadastrados. */
-SELECT COUNT(DISTINCT codigo_pro) FROM tabprodutos;
+SELECT COUNT(DISTINCT codigo_pro) FROM tabProdutos;
 
 /*13) Apresentar a quantidade total de Produtos
 cadastrados. */
-SELECT COUNT(codigo_pro) FROM tabprodutos;
+SELECT COUNT(codigo_pro) FROM tabProdutos;
 
 /*14) Apresentar o valor total dos Produtos em estoque. */
 SELECT SUM(qtd_estoque_pro*preco_custo_pro)
     AS TOTAL_VALOR_CUSTO, 
     SUM(qtd_estoque_pro*preco_venda_pro)
     AS TOTAL_VALOR_VENDAS 
-    FROM tabprodutos;
+    FROM tabProdutos;
 
 /*15) Apresentar a média dos valores de custo dos Produtos. */
-SELECT AVG(preco_custo_pro) FROM tabprodutos;
+SELECT AVG(preco_custo_pro) FROM tabProdutos;
 
 /*16) Apresentar a média da quantidade de Produtos em Estoque. */
-SELECT AVG(qtd_estoque_pro) FROM tabprodutos;
+SELECT AVG(qtd_estoque_pro) FROM tabProdutos;
 
 /*17) Apresentar o valor de venda do Produto mais caro.*/
-SELECT MAX(preco_venda_pro) FROM tabprodutos;
+SELECT MAX(preco_venda_pro) FROM tabProdutos;
 
 /*18) Apresentar o valor do Produto que possui o menor valor de custo. */
-SELECT MIN(preco_venda_pro) FROM tabprodutos;
+SELECT MIN(preco_venda_pro) FROM tabProdutos;
 
 /*19) Apresentar a maior quantidade de um mesmo Produto em estoque. */
-SELECT qtd_estoque_pro AS QTD, descricao_pro FROM tabprodutos ORDER BY QTD DESC LIMIT 1;
+SELECT qtd_estoque_pro AS QTD, descricao_pro FROM tabProdutos ORDER BY QTD DESC LIMIT 1;
 
 /*20) Apresentar a menor quantidade mínima permitida no estoque. */
-SELECT qtd_minima_pro, descricao_pro FROM tabprodutos ORDER BY qtd_minima_pro ASC LIMIT 1;
+SELECT qtd_minima_pro, descricao_pro FROM tabProdutos ORDER BY qtd_minima_pro ASC LIMIT 1;
 
 
 
-SELECT * FROM tabcategorias;
-SELECT * FROM tabmarcas;
-SELECT * FROM tabunidades;
+SELECT * FROM tabCategorias;
+SELECT * FROM tabMarcas;
+SELECT * FROM tabUnidades;
 SELECT * FROM tabProdutos;
+
 
 
 
